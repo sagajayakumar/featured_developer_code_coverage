@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>User.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">featureddevelopersthreeb</a> &gt; <a href="index.source.html" class="el_package">com.nwmsufeatureddevelopersthreeb.featureddevelopersthreeb</a> &gt; <span class="el_source">User.java</span></div><h1>User.java</h1><pre class="source lang-java linenums">package com.nwmsufeatureddevelopersthreeb.featureddevelopersthreeb;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
+import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import java.util.Objects;
+
+@Entity
+@Table(name = &quot;users&quot;, schema = &quot;public&quot;)
+public class User {
+	@Column(name = &quot;id&quot;)
+	@Id 
+	@SequenceGenerator(name = &quot;user-seq&quot;,sequenceName = &quot;users_id_seq&quot;,allocationSize = 1)
+	@GeneratedValue( strategy = GenerationType.SEQUENCE,generator = &quot;user-seq&quot;)
+	private  long id;
+	@Column(name = &quot;username&quot;)
+	private @NotBlank String username;
+	@Column(name = &quot;password&quot;)
+	private @NotBlank String password;
+	@Column(name = &quot;loggedin&quot;)
+	private @NotBlank boolean loggedIn;
+    
+
+<span class="nc" id="L29">	public User() {</span>
+<span class="nc" id="L30">	}</span>
+
+<span class="nc" id="L32">	public User(@NotBlank String username, @NotBlank String password, String resetToken) {</span>
+<span class="nc" id="L33">		this.username = username;</span>
+<span class="nc" id="L34">		this.password = password;</span>
+<span class="nc" id="L35">		this.loggedIn = false;</span>
+		
+<span class="nc" id="L37">	}</span>
+
+	public long getId() {
+<span class="nc" id="L40">		return id;</span>
+	}
+
+	public String getUsername() {
+<span class="nc" id="L44">		return username;</span>
+	}
+
+	public void setUsername(String username) {
+<span class="nc" id="L48">		this.username = username;</span>
+<span class="nc" id="L49">	}</span>
+
+	public String getPassword() {
+<span class="nc" id="L52">		return password;</span>
+	}
+
+	public void setPassword(String password) {
+<span class="nc" id="L56">		this.password = password;</span>
+<span class="nc" id="L57">	}</span>
+
+	public boolean isLoggedIn() {
+<span class="nc" id="L60">		return loggedIn;</span>
+	}
+
+	public void setLoggedIn(boolean loggedIn) {
+<span class="nc" id="L64">		this.loggedIn = loggedIn;</span>
+<span class="nc" id="L65">	}</span>
+	
+	@Override
+	public boolean equals(Object o) {
+<span class="nc bnc" id="L69" title="All 2 branches missed.">		if (this == o)</span>
+<span class="nc" id="L70">			return true;</span>
+<span class="nc bnc" id="L71" title="All 2 branches missed.">		if (!(o instanceof User))</span>
+<span class="nc" id="L72">			return false;</span>
+<span class="nc" id="L73">		User user = (User) o;</span>
+<span class="nc bnc" id="L74" title="All 4 branches missed.">		return Objects.equals(username, user.username) &amp;&amp; Objects.equals(password, user.password);</span>
+	}
+
+	@Override
+	public int hashCode() {
+<span class="nc" id="L79">		return Objects.hash(id, username, password, loggedIn);</span>
+	}
+
+	@Override
+	public String toString() {
+<span class="nc" id="L84">		return ( &quot;id=&quot; + id + &quot;, username=&quot; + username +&quot;, password=&quot; + password +</span>
+				 &quot;, loggedIn=&quot; + loggedIn);
+	}
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
