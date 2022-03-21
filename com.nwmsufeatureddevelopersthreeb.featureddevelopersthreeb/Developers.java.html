@@ -11,103 +11,142 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 /**
- *
  * @author s541906
  */
 @Entity
-@Table(name=&quot;developers&quot;,schema = &quot;public&quot;)
-<span class="nc" id="L19">public class Developers {</span>
-    @Id
-    @Column(name=&quot;developerid&quot;)
-    private String developerId;
-    @Column(name=&quot;fullname&quot;)
-    private String fullName;
-    @Column(name=&quot;emailaddress&quot;)
-    private String Emailaddress;
-    @Column(name=&quot;goals&quot;)
-    private String Goals;
-    @Column(name=&quot;skills&quot;)
-    private String Skills;
-    @Column(name=&quot;linkedinurl&quot;)
-    private String Linkedinurl; 
-    @Column(name=&quot;githuburl&quot;)
-    private String Githuburl;
+@Table(name = &quot;developers&quot;, schema = &quot;public&quot;)
+public class Developers {
+  @Id
+  @Column(name = &quot;developerid&quot;)
+  private String developerId;
 
-    @Column(name=&quot;image&quot;)
-     private  String Image;    
-  
-   
-    public String getDeveloperId() {
-<span class="nc" id="L41">        return developerId;</span>
-    }
+  @Column(name = &quot;fullname&quot;)
+  private String fullName;
 
-    public void setDeveloperId(String developerId) {
-<span class="nc" id="L45">        this.developerId = developerId;</span>
-<span class="nc" id="L46">    }</span>
+  @Column(name = &quot;emailaddress&quot;)
+  private String Emailaddress;
 
-    public String getFullName() {
-<span class="nc" id="L49">        return fullName;</span>
-    }
+  @Column(name = &quot;goals&quot;)
+  private String Goals;
 
-    public void setFullName(String fullName) {
-<span class="nc" id="L53">        this.fullName = fullName;</span>
-<span class="nc" id="L54">    }</span>
+  @Column(name = &quot;skills&quot;)
+  private String Skills;
 
-    public String getEmailaddress() {
-<span class="nc" id="L57">        return Emailaddress;</span>
-    }
+  @Column(name = &quot;linkedinurl&quot;)
+  private String Linkedinurl;
 
-    public void setEmailaddress(String Emailaddress) {
-<span class="nc" id="L61">        this.Emailaddress = Emailaddress;</span>
-<span class="nc" id="L62">    }</span>
+  @Column(name = &quot;githuburl&quot;)
+  private String Githuburl;
 
-    public String getGoals() {
-<span class="nc" id="L65">        return Goals;</span>
-    }
+  @Column(name = &quot;image&quot;)
+  private String Image;
 
-    public void setGoals(String Goals) {
-<span class="nc" id="L69">        this.Goals = Goals;</span>
-<span class="nc" id="L70">    }</span>
+  public String getDeveloperId() {
+<span class="nc" id="L45">    return developerId;</span>
+  }
 
-    public String getSkills() {
-<span class="nc" id="L73">        return Skills;</span>
-    }
+  public void setDeveloperId(String developerId) {
+<span class="nc" id="L49">    this.developerId = developerId;</span>
+<span class="nc" id="L50">  }</span>
 
-    public void setSkills(String Skills) {
-<span class="nc" id="L77">        this.Skills = Skills;</span>
-<span class="nc" id="L78">    }</span>
+  public String getFullName() {
+<span class="nc" id="L53">    return fullName;</span>
+  }
 
-    public String getLinkedinurl() {
-<span class="nc" id="L81">        return Linkedinurl;</span>
-    }
+  public void setFullName(String fullName) {
+<span class="nc" id="L57">    this.fullName = fullName;</span>
+<span class="nc" id="L58">  }</span>
 
-    public void setLinkedinurl(String Linkedinurl) {
-<span class="nc" id="L85">        this.Linkedinurl = Linkedinurl;</span>
-<span class="nc" id="L86">    }</span>
+<span class="nc" id="L60">  public Developers() {}</span>
 
-    public String getGithuburl() {
-<span class="nc" id="L89">        return Githuburl;</span>
-    }
+  public Developers(
+      String developerId,
+      String fullName,
+      String Emailaddress,
+      String Goals,
+      String Skills,
+      String Linkedinurl,
+      String Githuburl,
+<span class="fc" id="L70">      String Image) {</span>
+<span class="fc" id="L71">    this.developerId = developerId;</span>
+<span class="fc" id="L72">    this.fullName = fullName;</span>
+<span class="fc" id="L73">    this.Emailaddress = Emailaddress;</span>
+<span class="fc" id="L74">    this.Goals = Goals;</span>
+<span class="fc" id="L75">    this.Skills = Skills;</span>
+<span class="fc" id="L76">    this.Linkedinurl = Linkedinurl;</span>
+<span class="fc" id="L77">    this.Githuburl = Githuburl;</span>
+<span class="fc" id="L78">    this.Image = Image;</span>
+<span class="fc" id="L79">  }</span>
 
-    public void setGithuburl(String Githuburl) {
-<span class="nc" id="L93">        this.Githuburl = Githuburl;</span>
-<span class="nc" id="L94">    }</span>
+  public String getEmailaddress() {
+<span class="nc" id="L82">    return Emailaddress;</span>
+  }
 
-    public String getImage() {
-<span class="nc" id="L97">        return Image;</span>
-    }
-    public  void setImage(String Image) {
-<span class="nc" id="L100">        this.Image = Image;</span>
-<span class="nc" id="L101">    }</span>
+  public void setEmailaddress(String Emailaddress) {
+<span class="nc" id="L86">    this.Emailaddress = Emailaddress;</span>
+<span class="nc" id="L87">  }</span>
 
-    
-        @Override
-    public String toString() {
-<span class="nc" id="L106">        return &quot;Developers{&quot; + &quot;DeveloperId=&quot; + developerId + &quot;, FullName=&quot; + </span>
-        		fullName + &quot;, Emailaddress=&quot; + Emailaddress + &quot;, Goals=&quot; + 
-                Goals + &quot;, Skills=&quot; + Skills + &quot;, Linkedinurl=&quot; + Linkedinurl + &quot;, &quot;
-                + &quot;Githuburl=&quot; + Githuburl + &quot;,Image=&quot; + Image +'}';
-    }
-    
+  public String getGoals() {
+<span class="nc" id="L90">    return Goals;</span>
+  }
+
+  public void setGoals(String Goals) {
+<span class="nc" id="L94">    this.Goals = Goals;</span>
+<span class="nc" id="L95">  }</span>
+
+  public String getSkills() {
+<span class="nc" id="L98">    return Skills;</span>
+  }
+
+  public void setSkills(String Skills) {
+<span class="nc" id="L102">    this.Skills = Skills;</span>
+<span class="nc" id="L103">  }</span>
+
+  public String getLinkedinurl() {
+<span class="nc" id="L106">    return Linkedinurl;</span>
+  }
+
+  public void setLinkedinurl(String Linkedinurl) {
+<span class="nc" id="L110">    this.Linkedinurl = Linkedinurl;</span>
+<span class="nc" id="L111">  }</span>
+
+  public String getGithuburl() {
+<span class="nc" id="L114">    return Githuburl;</span>
+  }
+
+  public void setGithuburl(String Githuburl) {
+<span class="nc" id="L118">    this.Githuburl = Githuburl;</span>
+<span class="nc" id="L119">  }</span>
+
+  public String getImage() {
+<span class="nc" id="L122">    return Image;</span>
+  }
+
+  public void setImage(String Image) {
+<span class="nc" id="L126">    this.Image = Image;</span>
+<span class="nc" id="L127">  }</span>
+
+  @Override
+  public String toString() {
+<span class="nc" id="L131">    return &quot;Developers{&quot;</span>
+        + &quot;DeveloperId=&quot;
+        + developerId
+        + &quot;, FullName=&quot;
+        + fullName
+        + &quot;, Emailaddress=&quot;
+        + Emailaddress
+        + &quot;, Goals=&quot;
+        + Goals
+        + &quot;, Skills=&quot;
+        + Skills
+        + &quot;, Linkedinurl=&quot;
+        + Linkedinurl
+        + &quot;, &quot;
+        + &quot;Githuburl=&quot;
+        + Githuburl
+        + &quot;,Image=&quot;
+        + Image
+        + '}';
+  }
 }
-</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.6.202009150832</span></div></body></html>
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.3.201901230119</span></div></body></html>
